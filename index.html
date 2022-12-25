@@ -1,0 +1,40 @@
+<!--project for extract github user's information and show in html file-->
+<!--Using api.github.com-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GitHub User Information</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="icon" href="./images/icon.png">
+    </head>
+    <body>
+        <div class="informationbox">
+            <img class = "profpic" id="imgSrc" src="https://avatars.githubusercontent.com/u/58888297?v=4">
+            <div class="data">
+                <div class="dataname">
+                    <p id="username">Username</p>
+                </div>
+                <div class="datalocation">
+                    <img src="./images/location.svg" alt="location">
+                    <p id="address">Address</p>
+                </div>
+                <div class="datasite">
+                    <img src="./images/link.svg" alt="link">
+                    <p id="site">Site</p>
+                  </div>
+            </div>
+            <div class="bioclass">
+            <p id="bio">hi</p>
+            </div>
+        </div>
+        <div class="searchbox">
+          <label>Github username</label>
+          <div>    
+          <input type="text" id="gid" name="gid">
+          <button type="button" id="gbtn">Find it!</button>
+          </div>
+        </div>
+    <script src="./js/index.js"></script>
+    </body>
+</html>
