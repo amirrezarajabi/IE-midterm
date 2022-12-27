@@ -10,7 +10,8 @@ const button = document.getElementById('gbtn');
 const iformationBox = document.getElementsByClassName('informationbox');
 const dataLocation = document.getElementsByClassName('datalocation');
 const dataBlog = document.getElementsByClassName('datasite');
-//const notFound = document.getElementsByClassName('notfound');
+const bioClass = document.getElementsByClassName('bioClass');
+const notFound = document.getElementsByClassName('notfound');
 
 async function get_user_data(e){
     var id = getid.value;
@@ -18,12 +19,11 @@ async function get_user_data(e){
     .then((res) => res.json())
     .then((data) => {
         if (data.message == "Not Found"){
-            alert("User not found");
-            //notFound[0].style.display = "flex";
+            notFound[0].style.display = "flex";
             iformationBox[0].style.display = "none";
         }
         else{
-            //notFound[0].style.display = "none";
+            notFound[0].style.display = "none";
             iformationBox[0].style.display = "flex";
             userName.innerHTML = data.name;
             if (data.location == null){
@@ -49,10 +49,11 @@ async function get_user_data(e){
             img.src = data.avatar_url;
             console.log(data.bio);
             if (data.bio == null){
-                bio.innerHTML = "No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No bio No";
-                console.log(bio.innerHTML)
+                bioClass[0].style.display = "none";
+            } else {
+                bioClass[0].style.display = "flex";
+                bio.innerHTML = data.bio;
             }
-            bio.innerHTML = data.bio;
         }
     })
 }

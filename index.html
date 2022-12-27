@@ -28,10 +28,14 @@
                 </div>
             </div>
         </div>
-        <p style="margin-top: 2px; max-width: 40vw" id="bio"></p>
+        <div class="bioClass" style="margin-top: 10px; max-width: 40vw">
+            <img src="./images/note.svg" style="padding-top: 10px; width: 20px; height: 20px;" alt="bio">
+        <p id="bio"></p>
+        </div>
     </div>
     <div class="searchbox">
         <label>Github username</label>
+        <p class="notfound" style="color: red; display: none;">Not Found</p>
         <div>
             <input type="text" id="gid" name="gid">
             <button type="button" id="gbtn">Find it!</button>

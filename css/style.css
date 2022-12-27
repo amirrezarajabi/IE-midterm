@@ -22,14 +22,6 @@ body{
     align-items: center;
 }
 
-.informationbox .motherfucker{
-    white-space: nowrap;
-    overflow: auto;
-    display: blo;
-    text-overflow: clip;
-    max-width: 40vw;
-}
-
 .informationbox .datagroup{
     display: flex;
     flex-direction: row;
@@ -89,13 +81,15 @@ body{
 .informationbox .profpic{
     padding-right: 20px;
     opacity: 30%;
+    width: 300px;
+    height: 300px;
 }
 
 .informationbox .profpic:hover{
     opacity: 100%;
 }
 
-.informationbox .bioclass{
+/* .informationbox .bioclass{
     font-size: 20px;
     font-style: italic;
     display: flex;
@@ -103,7 +97,7 @@ body{
     max-width: 300px;
     white-space: nowrap;
 
-}
+} */
 
 .informationbox .data{
     float: right;
@@ -133,6 +127,17 @@ body{
 
 .informationbox .data .datasite img{
     padding-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.bioclass{
+    margin-top: 2px;
+    max-width: 40vw;
+}
+
+.bioImg {
+    padding-top: 20px;
     width: 20px;
     height: 20px;
 }
