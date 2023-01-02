@@ -1,3 +1,6 @@
+/*
+this  is for body of the page
+*/
 body{
     background: url("../images/background.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -8,6 +11,10 @@ body{
     align-items: stretch;
 }
 
+/*
+this is for the information box of the page
+the opacity of the box is 0.8
+*/
 .informationbox{
     /* doesn't show until click; */
     display: none;
@@ -17,17 +24,25 @@ body{
     text-align: center;
     margin-top: 5%;
     color: white;
+    /* font-family: sans-serif; */
     font-family: sans-serif;
     flex-direction: column;
     align-items: center;
 }
 
+/*
+this is for image and other data except bio
+*/
 .informationbox .datagroup{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+/*
+this is for bio
+opacity of the box is 0.8
+*/
 .searchbox{
 
     background: rgba(100, 100, 100, 0.8);
@@ -42,12 +57,19 @@ body{
     justify-content: space-around;
 }
 
+/*
+this is for the search box
+use flex direction to make the input and button don't be in the same line
+*/
 .searchbox div{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/*
+set the style of the input
+*/
 .searchbox input{
     height: 50px;
     font-size: 20px;
@@ -56,6 +78,10 @@ body{
     opacity: 30%;
 }
 
+
+/*
+set the style of the button
+*/
 .searchbox button{
     height: 50px;
     background: #f1f1f1;
@@ -64,20 +90,33 @@ body{
     font-size: 20px;
 }
 
+/*
+set the opacity of the button when hover
+*/
 .searchbox button:hover{
     opacity: 100%;
 }
 
+/*
+set the opacity of the input when hover
+*/
 .searchbox input:hover{
     opacity: 100%;
 }
 
+/*
+set the style of the label "Github username"
+*/
 .searchbox label{
     font-size: 40px;
     font-weight: bold;
     font-style: italic;
 }
 
+/*
+set the style of the user image
+opacity of the image is 30%
+*/
 .informationbox .profpic{
     padding-right: 20px;
     opacity: 30%;
@@ -85,69 +124,93 @@ body{
     height: 300px;
 }
 
+/*
+set the opacity of the image when hover
+*/
 .informationbox .profpic:hover{
     opacity: 100%;
 }
 
-/* .informationbox .bioclass{
-    font-size: 20px;
-    font-style: italic;
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    white-space: nowrap;
-
-} */
-
+/*
+set the float of the data
+*/
 .informationbox .data{
     float: right;
 }
 
+/*
+set the style of the name of the user
+*/
 .informationbox .data .dataname{
     font-size: 40px;
 }
 
+/*
+set the style of the location of the user
+*/
 .informationbox .data .datalocation{
     font-style: italic;
     font-size: 20px;
     display: flex;
 }
 
+/*
+set the style of the location icon
+*/
 .informationbox .data .datalocation img{
     padding-right: 10px;
     width: 20px;
     height: 20px;
 }
 
+/*
+set the style of the site of the user
+*/
 .informationbox .data .datasite{
     font-style: italic;
     font-size: 20px;
     display: flex;
 }
 
+/*
+set the style of the site icon
+*/
 .informationbox .data .datasite img{
     padding-right: 10px;
     width: 20px;
     height: 20px;
 }
 
+/*
+set the style of the programming language of the user
+*/
 .informationbox .data .dataprogramming{
     font-style: italic;
     font-size: 20px;
     display: flex;
 }
 
+/*
+set the style of the programming language icon
+*/
 .informationbox .data .dataprogramming img{
     padding-right: 10px;
     width: 20px;
     height: 20px;
 }
 
+/*
+set the style of the bio of the user
+set the max width of the bio to 40vw to make it responsive
+*/
 .bioclass{
     margin-top: 2px;
     max-width: 40vw;
 }
 
+/*
+set the style of the bio icon
+*/
 .bioImg {
     padding-top: 20px;
     width: 20px;

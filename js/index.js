@@ -15,33 +15,43 @@ const bioClass = document.getElementsByClassName('bioClass');
 const notFound = document.getElementsByClassName('notfound');
 const programmingClass = document.getElementsByClassName('dataprogramming');
 
+
+// this function is use for get user data from api or local storage
 async function get_user_data(e) {
+    // get id from input
     var id = getid.value;
+    // check if id is not in local storage
     if (window.localStorage.getItem(id) == null) {
+        // get data from api
         let data = await fetch(`https://api.github.com/users/${id}`).then((res) => res.json())
         if (data.message == "Not Found") {
+            // if user not found
             notFound[0].style.display = "flex";
             iformationBox[0].style.display = "none";
             userState.style.display = "none";
-        }
+        } // if user found
         else {
+            // find languages
             let lng = await find_languages();
             // add languages to data
             data.languages = lng;
+            // add data to local storage
             window.localStorage.setItem(id, JSON.stringify(data));
+            // show data
             userState.style.display = "flex";
             userState.style.color = "red"
             userState.innerHTML = "This data is from API";
             notFound[0].style.display = "none";
             iformationBox[0].style.display = "flex";
             userName.innerHTML = data.name;
+            // check if user has location
             if (data.location == null) {
                 dataLocation[0].style.display = "none";
             }
             else {
                 dataLocation[0].style.display = "flex";
                 address.innerHTML = data.location;
-            }
+            } // check if user has blog
             if (data.blog == "") {
                 dataBlog[0].style.display = "none";
             }
@@ -56,12 +66,14 @@ async function get_user_data(e) {
                 }
             }
             img.src = data.avatar_url;
+            // check if user has bio
             if (data.bio == null) {
                 bioClass[0].style.display = "none";
             } else {
                 bioClass[0].style.display = "flex";
                 bio.innerHTML = data.bio;
             }
+            // check if user has programming languages
             if (data.languages == null) {
                 programmingClass[0].style.display = "none";
             } else {
@@ -71,7 +83,8 @@ async function get_user_data(e) {
         }
     }
     else {
-
+        // if user is in local storage
+        // show data
         userState.style.display = "flex";
         userState.style.color = "green";
         userState.innerHTML = "This data is from Local Storage";
@@ -79,13 +92,14 @@ async function get_user_data(e) {
         iformationBox[0].style.display = "flex";
         var data = JSON.parse(window.localStorage.getItem(id));
         userName.innerHTML = data.name;
+        // check if user has location
         if (data.location == null) {
             dataLocation[0].style.display = "none";
         }
         else {
             dataLocation[0].style.display = "flex";
             address.innerHTML = data.location;
-        }
+        } // check if user has blog
         if (data.blog == "") {
             dataBlog[0].style.display = "none";
         }
@@ -100,12 +114,13 @@ async function get_user_data(e) {
             }
         }
         img.src = data.avatar_url;
+        // check if user has bio
         if (data.bio == null) {
             bioClass[0].style.display = "none";
         } else {
             bioClass[0].style.display = "flex";
             bio.innerHTML = data.bio;
-        }
+        } // check if user has programming languages
         if (data.languages == null) {
             programmingClass[0].style.display = "none";
         } else {
@@ -140,6 +155,11 @@ async function find_languages(){
     return most_used_language;
 }
 
+/**
+ * this function return most frequenced elem in array
+ * @param {*} array 
+ * @returns string
+ */
 function mode(array)
 {
     if(array.length == 0)
@@ -163,3 +183,8 @@ function mode(array)
 }
 
 button.addEventListener('click', get_user_data);
+button.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        get_user_data();
+    }
+});
